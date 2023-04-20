@@ -1,7 +1,6 @@
 using OpenGrade;
 using OpenGrade.Data;
 using OpenGrade.Endpoints;
-using OpenGrade.Endpoints.BTEC;
 using OpenGrade.Service;
 
 var builder = WebApplication.CreateBuilder(args);
