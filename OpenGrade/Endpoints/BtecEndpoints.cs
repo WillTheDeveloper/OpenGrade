@@ -11,13 +11,13 @@ public static class BtecEndpoints
         /*app.MapGet("/btec/test", async (ICourseService service)
 			=> await service.TestMethod());*/
 
-        app.MapGet("/btec/course", async (ICourseService service, string? subjectName) =>
+        app.MapGet("/btec/course", async ([FromServices]ICourseService service, string? subjectName) =>
         {
             if (string.IsNullOrEmpty(subjectName))
             {
                 return Results.Ok(await service.TestMethod());
             }
             return Results.Ok(await service.CourseBySubject(subjectName));
-        });
+        }).WithTags("BTEC");
     }
 }
