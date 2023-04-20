@@ -33,5 +33,15 @@ namespace OpenGrade.Data
 			}
 			return result;
 		}
+
+		public async Task<IEnumerable<Course>> GetAllCourses()
+		{
+			var result = new List<Course>().AsEnumerable();
+			using (var connection = _context.dbConnection())
+			{
+				result = await connection.QueryAsync<Course>("SELECT * FROM Courses");
+			}
+			return result;
+		}
 	}
 }

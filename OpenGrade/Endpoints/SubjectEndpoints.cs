@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using OpenGrade.Service;
-using System.Runtime.CompilerServices;
 
 namespace OpenGrade.Endpoints
 {

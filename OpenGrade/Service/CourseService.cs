@@ -22,5 +22,10 @@ namespace OpenGrade.Service
 		{
 			return await _courseData.CourseBySubject(subjectName);
 		}
+
+		public async Task<IEnumerable<Course>> GetAllCourses()
+		{
+			return await _courseData.GetAllCourses();
+		}
 	}
 }

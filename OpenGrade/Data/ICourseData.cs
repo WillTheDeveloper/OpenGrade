@@ -6,5 +6,6 @@ namespace OpenGrade.Data
 	{
 		Task<IEnumerable<Course>> TestMethod();
 		Task<IEnumerable<Course>> CourseBySubject(string subjectName);
+		Task<IEnumerable<Course>> GetAllCourses();
 	}
 }
