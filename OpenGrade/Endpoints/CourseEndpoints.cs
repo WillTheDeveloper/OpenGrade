@@ -22,7 +22,7 @@ public static class CourseEndpoints
 			return Results.Ok(await service.GetCourseByGuid(courseGuid));
 		}).WithTags("Course");
 
-		app.MapGet("/course/{courseId}/grades", async([FromServices]ICourseService service, [FromRoute]Guid  courseId) =>
+		app.MapGet("/course/{courseId}/grades", async([FromServices]ICourseService service, [FromRoute]Guid courseId) =>
 		{
 			return Results.Ok(await service.GetCourseGradesByGuid(courseId));
 		}).WithTags("Course");
