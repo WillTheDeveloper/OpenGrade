@@ -13,7 +13,15 @@ namespace OpenGrade.Endpoints
 				return Results.Ok(await service.GetAllSubjects());
 			}).WithTags("Subjects");
 
-			
+			app.MapGet("/subject/{subjectName}", async ([FromServices] ISubjectService service, [FromRoute]string subjectName) =>
+			{
+				return Results.Ok(await service.GetSubjectByName(subjectName));
+			}).WithTags("Subjects");
+
+			app.MapGet("/subject/{subjectId}", async([FromServices] ISubjectService service, [FromRoute] Guid subjectId) =>
+			{
+				return Results.Ok(await service.GetSubjectByGuid(subjectId));
+			}).WithTags("Subjects");
 		}
 	}
 }

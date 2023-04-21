@@ -27,5 +27,15 @@ namespace OpenGrade.Service
 		{
 			return await _courseData.GetAllCourses();
 		}
+
+		public async Task<Course> GetCourseByGuid(Guid courseId)
+		{
+			return await _courseData.GetCourseByGuid(courseId);
+		}
+
+		public async Task<IEnumerable<Grade>> GetCourseGradesByGuid(Guid courseId)
+		{
+			return await _courseData.GetCourseGradesByGuid(courseId);
+		}
 	}
 }

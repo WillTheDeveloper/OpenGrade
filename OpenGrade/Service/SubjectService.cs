@@ -16,5 +16,15 @@ namespace OpenGrade.Service
 		{
 			return await _subjectData.GetAllSubjects();
 		}
+
+		public Task<Subject> GetSubjectByGuid(Guid subjectId)
+		{
+			throw new NotImplementedException();
+		}
+
+		public Task<Subject> GetSubjectByName(string subjectName)
+		{
+			throw new NotImplementedException();
+		}
 	}
 }

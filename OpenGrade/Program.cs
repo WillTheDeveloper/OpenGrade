@@ -28,6 +28,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.MapSubjectEndpoints();
+app.MapCourseEndpoints();
 
 app.MapBtecEndpoints();
 

@@ -43,5 +43,25 @@ namespace OpenGrade.Data
 			}
 			return result;
 		}
+
+		public async Task<Course> GetCourseByGuid(Guid courseId)
+		{
+			var result = new Course();
+			using (var connection = _context.dbConnection())
+			{
+				result = await connection.QueryFirstAsync<Course>($"SELECT * FROM Courses WHERE courseId = '{courseId}'");
+			}
+			return result;
+		}
+
+		public async Task<IEnumerable<Grade>> GetCourseGradesByGuid(Guid courseId)
+		{
+			var result = new List<Grade>().AsEnumerable();
+			using (var connection = _context.dbConnection())
+			{
+				result = await connection.QueryAsync<Grade>($"SELECT * FROM Grades g JOIN Courses c ON c.courseId = g.courseId WHERE c.courseId = '{courseId}'");
+			}
+			return result;
+		}
 	}
 }
