@@ -1,6 +1,6 @@
 ﻿namespace OpenGrade.Models
 {
-	public class Course
+	public class Courses
 	{
         public Guid courseId { get; set; }
         public Guid qualificationId { get; set; }

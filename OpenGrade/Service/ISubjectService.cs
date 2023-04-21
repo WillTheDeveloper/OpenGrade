@@ -4,8 +4,8 @@ namespace OpenGrade.Service
 {
 	public interface ISubjectService
 	{
-		Task<IEnumerable<Subject>> GetAllSubjects();
-		Task<Subject> GetSubjectByGuid(Guid subjectId);
-		Task<Subject> GetSubjectByName(string subjectName);
+		Task<IEnumerable<Subjects>> GetAllSubjects();
+		Task<Subjects> GetSubjectByGuid(Guid subjectId);
+		Task<Subjects> GetSubjectByName(string subjectName);
 	}
 }

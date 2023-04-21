@@ -4,8 +4,8 @@ namespace OpenGrade.Data
 {
 	public interface ISubjectData
 	{
-		Task<IEnumerable<Subject>> GetAllSubjects();
-		Task<Subject> GetSubjectByName(string subjectName);
-		Task<Subject> GetSubjectByGuid(Guid subjectGuid);
+		Task<IEnumerable<Subjects>> GetAllSubjects();
+		Task<Subjects> GetSubjectByName(string subjectName);
+		Task<Subjects> GetSubjectByGuid(Guid subjectGuid);
 	}
 }

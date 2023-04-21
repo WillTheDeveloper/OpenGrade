@@ -4,10 +4,10 @@ namespace OpenGrade.Data
 {
 	public interface ICourseData
 	{
-		Task<IEnumerable<Course>> TestMethod();
-		Task<IEnumerable<Course>> CourseBySubject(string subjectName);
-		Task<IEnumerable<Course>> GetAllCourses();
-		Task<Course> GetCourseByGuid(Guid courseId);
-		Task<IEnumerable<Grade>> GetCourseGradesByGuid(Guid courseId);
+		Task<IEnumerable<Courses>> TestMethod();
+		Task<IEnumerable<Courses>> CourseBySubject(string subjectName);
+		Task<IEnumerable<Courses>> GetAllCourses();
+		Task<Courses> GetCourseByGuid(Guid courseId);
+		Task<IEnumerable<Grades>> GetCourseGradesByGuid(Guid courseId);
 	}
 }

@@ -12,17 +12,17 @@ namespace OpenGrade.Service
 			_subjectData = subjectData;
 		}
 		
-		public async Task<IEnumerable<Subject>> GetAllSubjects()
+		public async Task<IEnumerable<Subjects>> GetAllSubjects()
 		{
 			return await _subjectData.GetAllSubjects();
 		}
 
-		public Task<Subject> GetSubjectByGuid(Guid subjectId)
+		public Task<Subjects> GetSubjectByGuid(Guid subjectId)
 		{
 			throw new NotImplementedException();
 		}
 
-		public Task<Subject> GetSubjectByName(string subjectName)
+		public Task<Subjects> GetSubjectByName(string subjectName)
 		{
 			throw new NotImplementedException();
 		}

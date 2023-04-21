@@ -4,10 +4,10 @@ namespace OpenGrade.Service
 {
 	public interface ICourseService
 	{
-		Task<IEnumerable<Course>> TestMethod();
-		Task<IEnumerable<Course>> CourseBySubject(string subjectName);
-		Task<IEnumerable<Course>> GetAllCourses();
-		Task<Course> GetCourseByGuid(Guid courseGuid);
-		Task<IEnumerable<Grade>> GetCourseGradesByGuid(Guid courseId);
+		Task<IEnumerable<Courses>> TestMethod();
+		Task<IEnumerable<Courses>> CourseBySubject(string subjectName);
+		Task<IEnumerable<Courses>> GetAllCourses();
+		Task<Courses> GetCourseByGuid(Guid courseGuid);
+		Task<IEnumerable<Grades>> GetCourseGradesByGuid(Guid courseId);
 	}
 }

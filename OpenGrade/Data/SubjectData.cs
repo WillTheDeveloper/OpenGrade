@@ -12,42 +12,42 @@ namespace OpenGrade.Data
 			_context = context;
 		}
 
-		public async Task<IEnumerable<Subject>> GetAllSubjects()
+		public async Task<IEnumerable<Subjects>> GetAllSubjects()
 		{
-			var result = new List<Subject>().AsEnumerable();
+			var result = new List<Subjects>().AsEnumerable();
 			using (var connection = _context.dbConnection())
 			{
-				result = await connection.QueryAsync<Subject>($"SELECT * FROM Subjects");
+				result = await connection.QueryAsync<Subjects>($"SELECT * FROM Subjects");
 			}
 			return result;
 		}
 
-		public async Task<Subject> GetSubjectByName(string subjectName)
+		public async Task<Subjects> GetSubjectByName(string subjectName)
 		{
-			var result = new Subject();
+			var result = new Subjects();
 			using (var connection = _context.dbConnection())
 			{
-				result = await connection.QueryFirstAsync<Subject>($"SELECT * FROM Subjects WHERE Name = '{subjectName}'");
+				result = await connection.QueryFirstAsync<Subjects>($"SELECT * FROM Subjects WHERE Name = '{subjectName}'");
 			}
 			return result;
 		}
 
-		public async Task<Subject> GetSubjectByGuid(Guid subjectGuid)
+		public async Task<Subjects> GetSubjectByGuid(Guid subjectGuid)
 		{
-			var result = new Subject();
+			var result = new Subjects();
 			using (var connection = _context.dbConnection())
 			{
-				result = await connection.QueryFirstAsync<Subject>($"SELECT * FROM Subjects WHERE subjectId = '{subjectGuid}'");
+				result = await connection.QueryFirstAsync<Subjects>($"SELECT * FROM Subjects WHERE subjectId = '{subjectGuid}'");
 			}
 			return result;
 		}
 
-		public async Task<IEnumerable<Course>> GetCoursesBySubjectName(string subjectName)
+		public async Task<IEnumerable<Courses>> GetCoursesBySubjectName(string subjectName)
 		{
-			var result = new List<Course>().AsEnumerable();
+			var result = new List<Courses>().AsEnumerable();
 			using (var connection = _context.dbConnection())
 			{
-				result = await connection.QueryAsync<Course>($"SELECT * FROM Courses c JOIN Subjects s ON s.subjectId = c.SubjectId WHERE s.Name = '{subjectName}'");
+				result = await connection.QueryAsync<Courses>($"SELECT * FROM Courses c JOIN Subjects s ON s.subjectId = c.SubjectId WHERE s.Name = '{subjectName}'");
 			}
 			return result;
 		}
