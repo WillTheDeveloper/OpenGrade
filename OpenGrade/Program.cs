@@ -13,10 +13,12 @@ builder.Services.AddSingleton<Context>();
 // Data layer
 builder.Services.AddScoped<ICourseData, CourseData>();
 builder.Services.AddScoped<ISubjectData, SubjectData>();
+builder.Services.AddScoped<IQualificationData, QualificationData>();
 
 // Service layer
 builder.Services.AddScoped<ICourseService, CourseService>();
 builder.Services.AddScoped<ISubjectService, SubjectService>();
+builder.Services.AddScoped<IQualificationService, QualificationService>();
 
 var app = builder.Build();
 
@@ -29,6 +31,7 @@ if (app.Environment.IsDevelopment())
 
 app.MapSubjectEndpoints();
 app.MapCourseEndpoints();
+app.MapQualificationEndpoints();
 
 app.MapBtecEndpoints();
 
