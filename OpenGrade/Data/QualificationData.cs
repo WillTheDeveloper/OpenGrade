@@ -35,12 +35,12 @@ public class QualificationData : IQualificationData
         return result;
     }
 
-    public async Task<IEnumerable<Qualifications>> GetQualificationCoursesByGuid(Guid qualificationId)
+    public async Task<IEnumerable<Courses>> GetQualificationCoursesByGuid(Guid qualificationId)
     {
-        var result = new List<Qualifications>().AsEnumerable();
+        var result = new List<Courses>().AsEnumerable();
         using (var connection = _context.dbConnection())
         {
-            result = await connection.QueryAsync<Qualifications>($"SELECT * FROM Courses WHERE qualificationId = '{qualificationId}'");
+            result = await connection.QueryAsync<Courses>($"SELECT * FROM Courses WHERE qualificationId = '{qualificationId}'");
         }
 
         return result;
